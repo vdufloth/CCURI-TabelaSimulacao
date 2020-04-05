@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="calculos.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="entrada col-lg-12">
+			<h2>Tabela de simulação</h2>
+			<br />
+		</div>
+		<div class="entrada col-lg-12">
+			<div class="panel panel-success col-lg-4" style="padding: 0;">
+				<div class="panel-heading">Tempo a ser simulado (min):</div>
+				<div class="panel-body">
+					<input type="text" class="form-control" id="tempo" value="" /><br />
+					<button type="submit" class="btn btn-success" onclick="simular();">Calcular</button>
+					<button type="submit" class="btn btn-default" onclick="limpar();">Limpar</button>
+				</div>
+			</div>
+			<div class="panel panel-success col-lg-4" style="padding: 0;">
+				<div class="panel-heading">TEC</div>
+				<div class="panel-body">
+					<div class="col-lg-12 tec">
+						<div class="col-lg-6">
+							<input type="text" id="tec" class="form-control" value="" /><br />
+							<button type="submit" class="btn btn-default" onclick="adicionarTec();">Adicionar
+								TEC</button>
+						</div>
+						<div class="col-lg-6">
+							<ul class="list-group col-lg-6" id="tec">
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-success col-lg-4" style="padding: 0;">
+				<div class="panel-heading">TS</div>
+				<div class="panel-body">
+					<div class="ts">
+						<div class="col-lg-6">
+							<input type="text" id="ts" class="form-control" value="" /><br />
+							<button type="submit" class="btn btn-default" onclick="adicionarTs();">Adicionar TS</button>
+						</div>
+						<div class="col-lg-6">
+							<ul class="list-group col-lg-6" id="ts">
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div class="col-lg-12">
+			<table class="resultado-1 table table-striped">
+				<thead>
+					<tr class="custom-thead">
+						<th>Cliente</th>
+						<th>Tempo desde a última chegada (minutos)</th>
+						<th>Tempo de Chegada no Relógio</th>
+						<th>Tempo de Serviço (minutos)</th>
+						<th>Tempo de Início do Serviço no relógio</th>
+						<th>Tempo do cliente na fila (minutos)</th>
+						<th>Tempo final do serviço no relógio</th>
+						<th>Tempo do Cliente no Sistema (minutos)</th>
+						<th>Tempo livre do operador (minutos)</th>
+					</tr>
+				</thead>
+				<tfoot>
+					<tr style="font-weight: bold;">
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tfoot>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+		<div class="col-lg-6">
+			<br />
+			<table class="resultado-2 table table-striped col-lg-6">
+				<tr>
+					<td class="col-lg-10">Total de Clientes</td>
+					<td class="col-lg-1" id="total-clientes">0.00</td>
+					<td class="col-lg-1">Quantidade</td>
+				</tr>
+				<tr>
+					<td>Tempo Médio de Espera na Fila</td>
+					<td class="col-lg-1" id="media-espera">0.00</td>
+					<td class="col-lg-1">minutos</td>
+				</tr>
+				<tr>
+					<td>Probabilidade de um cliente esperar na fila</td>
+					<td class="col-lg-1" id="probabilidade-cliente-fila">0.00</td>
+					<td class="col-lg-1">%</td>
+				</tr>
+				<tr>
+					<td>Probabilidade do Operador Livre</td>
+					<td class="col-lg-1" id="probabilidade-operador-livre">0.00</td>
+					<td class="col-lg-1">%</td>
+				</tr>
+				<tr>
+					<td class="col-lg-2">Tempo Médio do Serviço</td>
+					<td class="col-lg-1" id="media-servico">0.00</td>
+					<td class="col-lg-1">minutos</td>
+				</tr>
+				<tr>
+					<td>Tempo Médio Gasto</td>
+					<td class="col-lg-1" id="tempo-medio-gasto">0.00</td>
+					<td class="col-lg-1">minutos</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div style="display:none;" class="conteudo-adicionar">
+		<tr style="">
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</div>
+</body>
+
+</html>
